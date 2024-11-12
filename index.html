@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom background image */
+        body {
+            background-image: url('./image.jpg'); /* Replace with your image URL */
+            background-size: cover; /* Ensures the image covers the entire screen */
+            background-position: center; /* Centers the image */
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+
+    <div class="w-full max-w-lg bg-white p-8 rounded-lg shadow-lg bg-opacity-80">
+        <h1 class="text-2xl font-bold text-center mb-6">STUDENT FORM</h1>
+        
+        <form id="studentForm" class="grid grid-cols-1 gap-4">
+            <div>
+                <label for="name" class="block text-gray-700 font-medium mb-1">Name:</label>
+                <input type="text" id="name" class="w-full p-2 border rounded" required>
+            </div>
+
+            <div>
+                <label for="age" class="block text-gray-700 font-medium mb-1">Age:</label>
+                <input type="number" id="age" class="w-full p-2 border rounded" required>
+            </div>
+
+            <div>
+                <label class="block text-gray-700 font-medium mb-1">Gender:</label>
+                <div class="flex items-center space-x-4">
+                    <label class="flex items-center">
+                        <input type="radio" id="male" name="gender" value="Male" class="mr-2" checked>
+                        Male
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" id="female" name="gender" value="Female" class="mr-2">
+                        Female
+                    </label>
+                </div>
+            </div>
+
+            <div>
+                <label for="course" class="block text-gray-700 font-medium mb-1">Course:</label>
+                <select id="course" class="w-full p-2 border rounded" required>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Python">Python</option>
+                    <option value="HTML & CSS">HTML & CSS</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="email" class="block text-gray-700 font-medium mb-1">E-mail:</label>
+                <input type="email" id="email" class="w-full p-2 border rounded" required>
+            </div>
+
+            <button type="button" onclick="addStudent()" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+                Save
+            </button>
+        </form>
+
+        <!-- Table Container with dynamic box size -->
+        <div class="overflow-x-auto mt-6 max-h-64 border border-gray-200 rounded">
+            <table id="studentTable" class="w-full table-auto">
+                <thead>
+                    <tr class="bg-gray-200 text-gray-700">
+                        <th class="p-2 border">NAME</th>
+                        <th class="p-2 border">AGE</th>
+                        <th class="p-2 border">COURSE</th>
+                        <th class="p-2 border">GENDER</th>
+                        <th class="p-2 border">EMAIL</th>
+                        <th class="p-2 border">ACTION</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Entries will be added here dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
